@@ -1,0 +1,39 @@
+<aura:component controller="contactRecordSavingApex">
+    <aura:attribute name = "Contact" type = "Contact" default="{'sObjectType':'Contact','FirstName':'','LastName':'','Phone':'','Email':'','Fax':''}"></aura:attribute>
+    <div aria-labelledby="newcontactForm">
+        <fieldset class="slds-box slds-theme_default slds-container_small">
+            <legend id="newcontactForm" class="slds-text-heading_small slds-p-vertical_medium">
+                Add Contact
+            </legend>
+            <form class="slds-form_stacked">
+                <lightning:input aura:id="contactForm" label="First Name"
+                                 name="FirstName"
+                                 value='{!v.Contact.FirstName}'
+                                 type="text"
+                                 required="true"/>
+                <lightning:input aura:id="contactForm" label="Last Name"
+                                 name="LastName"
+                                 value='{!v.Contact.LastName}'
+                                 type="text"
+                                 required="true"/>
+                <lightning:input aura:id="contactForm" label="Email"
+                                 name="Email"
+                                 type="email"
+                                 value='{!v.Contact.Email}'/>
+                <lightning:input aura:id="contactForm" label="Phone"
+                                 name="Phone"
+                                 type="text"
+                                 value='{!v.Contact.Phone}'/>
+                <lightning:input aura:id="contactForm" label="Fax"
+                                 name="Fax"
+                                 value='{!v.Contact.Fax}'
+                                 type="text"
+                                 />
+                <lightning:button label="Create contact"
+                                  class="slds-m-top_medium"
+                                  variant="brand"
+                                  onclick="{!c.clickCreate}"/>
+            </form>
+        </fieldset>
+    </div>
+</aura:component>
